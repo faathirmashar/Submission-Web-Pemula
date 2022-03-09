@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <h1 class="text-center text-white bg-primary pt-2 pb-2">Bookshelf App</h1>
+
+    <main class="container mt-4 mb-4">
+        <section class="card p-3 mb-4">
+            <h2 class="text-center text-info mb-3">Masukkan Buku Baru</h2>
+
+            <form>
+                <input type="text" class="form-control mb-3" placeholder="Judul" id="input-title">
+                <input type="text" class="form-control mb-3" placeholder="Penulis" id="input-author">
+                <input type="number" class="form-control mb-3" placeholder="Tahun" id="input-year">
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" value="hasFinished" id="checkbox-finished-book">
+                    <label class="form-check-label" for="finished-book">
+                      Selesai dibaca
+                    </label>
+                </div>
+                <button class="btn btn-primary btn-input-not-finished w-100">Masukkan Buku ke rak <strong>Belum selesai dibaca</strong></button>
+                <button class="btn btn-primary btn-input-finished w-100 d-none">Masukkan Buku ke rak <strong>Selesai dibaca</strong></button>
+            </form>
+        </section>
+
+        <section class="card p-3 mb-4">
+            <h2 class="text-center text-info mb-3">Cari Buku</h2>
+            <form>
+                <div class="input-group mb-3">
+                    <input type="text" id="input-search" class="form-control" placeholder="Judul" aria-describedby="search">
+                    <span class="input-group-text" id="search">
+                        <button class="btn btn-primary btn-search">Cari</button>
+                    </span>
+                </div>
+            </form>
+        </section>
+
+        <section class="card p-3">
+            <nav class="nav nav-tabs justify-content-center mb-2">
+                <li class="nav-item">
+                  <button class="nav-link nav-not-finished active">Belum selesai</button>
+                </li>
+                <li class="nav-item">
+                  <button class="nav-link nav-finished">Telah selesai</button>
+                </li>
+            </nav>
+            
+            <div id="container-books"></div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="book-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Hapus buku.</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                Apakah anda yakin ingin menghapus buku?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="btn-accept-delete" data-bs-dismiss="modal">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
